@@ -53,6 +53,25 @@ const (
 	resultLast = RParental + 1
 )
 
+func (r Result) toString() string {
+	if r == RNotFiltered {
+		return "RNotFiltered"
+	}
+	if r == RFiltered {
+		return "RFiltered"
+	}
+	if r == RSafeBrowsing {
+		return "RSafeBrowsing"
+	}
+	if r == RSafeSearch {
+		return "RSafeSearch"
+	}
+	if r == RParental {
+		return "RParental"
+	}
+	return "resultLast"
+}
+
 // Entry is a statistics data entry.
 type Entry struct {
 	// Clients is the client's primary ID.

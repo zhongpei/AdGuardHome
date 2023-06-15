@@ -284,7 +284,7 @@ func (s *StatsCtx) Update(e Entry) {
 	if ip := net.ParseIP(clientID); ip != nil {
 		clientID = ip.String()
 	}
-
+	log.Info("dns query: %s %s %s %d", clientID, e.Domain, e.Result.toString(), e.Time)
 	s.curr.add(e.Result, e.Domain, clientID, uint64(e.Time))
 }
 
